@@ -1,15 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="challenge.css">
+    <title>Desafio Alura</title>
 </head>
+
 <body>
-    <img src="vector.svg" alt="logo">
-   
-        
-    
+    <div class="box1">
+        <header>
+            <img class="logo" src="vector.svg" alt="logo">
+        </header>
+        <main>
+            <label for="DigiteSeuTexto">Digite seu texto</label>
+            <input type="texto" id="DigiteSeuTexto">
+            <div class="alerta">
+                <img class="exclamacao" src="./exclamacao.svg" alt="">
+                <p> Apenas letras minúsculas e sem acento</p>
+            </div>
+            <div class="botoes">
+                <button class="botao1">Criptografar</button>
+                <button class="botao2">Descriptografar</button>
+            </div>
+        </main>
+    </div>
+
+    <div class="box2">
+        <img class="imagemdecodificador" src="./imagemdecodificador.png" alt="">
+        <textarea name="" id="" cols="45" rows="45"> Digite seu texto</textarea>
+    </div>
+    <script>
+        var input = document.querySelector("Input");
+        input.focus();   
+    </script>
 </body>
+
 </html>
