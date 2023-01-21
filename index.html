@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="challenge.css">
+    <script src="javascript.js" defer></script>
     <title>Desafio Alura</title>
 </head>
 
@@ -16,7 +17,7 @@
         </header>
         <main>
             <label for="DigiteSeuTexto">Digite seu texto</label>
-            <input type="texto" id="DigiteSeuTexto">
+            <input type="text" id="DigiteSeuTexto">
             <div class="alerta">
                 <img class="exclamacao" src="./exclamacao.svg" alt="">
                 <p> Apenas letras minúsculas e sem acento</p>
@@ -28,14 +29,11 @@
         </main>
     </div>
 
-    <div class="box2">
+    <div class="box2 oculto">
         <img class="imagemdecodificador" src="./imagemdecodificador.png" alt="">
-        <textarea name="" id="" cols="45" rows="45"> Digite seu texto</textarea>
     </div>
-    <script>
-        var input = document.querySelector("Input");
-        input.focus();   
-    </script>
+   
+      
 </body>
 
 </html>
