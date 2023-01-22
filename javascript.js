@@ -3,13 +3,15 @@ const input = document.querySelector("#DigiteSeuTexto");
 const imgbox2 = document.querySelector(".imagemdecodificador");
 const area = document.querySelector(".box2");
 const btn2 = document.querySelector(".botao2");
-
+let armazenado = ""
 btn1.addEventListener("click", () => {
-    const dados = input.value;
-    const codificado = criptografar(dados)
+    let dados = input.value;
+
+    // validarEntrada(dados)
+
+    const dadosCriptografado = criptografar(dados)
     imgbox2.classList.add("ocultar")
-    area.textContent = codificado
-    // area.classList.remove("ocultar")
+    area.textContent = dadosCriptografado
     input.value = ""
 })
 // As "chaves" de criptografia que utilizaremos são:
@@ -20,21 +22,38 @@ btn1.addEventListener("click", () => {
 // A letra "u" é convertida para "ufat"
 
 function criptografar(texto) {
-    while (texto.includes("a")) {
-        texto = texto.replace("a", "4")
+    armazenado = texto;
+
+    texto = texto.toUpperCase()
+    
+    while (texto.includes("E")) {
+        texto = texto.replace("E", "enter")
     }
-    return texto
+
+    while (texto.includes("I")) {
+        texto = texto.replace("I", "imes")
+       
+    }
+    while (texto.includes("A")) {
+        texto = texto.replace("A", "ai")
+    }
+    while (texto.includes("O")) {
+        texto = texto.replace("O", "ober")
+    }
+    while (texto.includes("U")) {
+        texto = texto.replace("U", "ufat")
+    } 
+    return texto.toLowerCase()
+   
 }
 
-btn2.addEventListener("click",() =>{
-    const dados = area.value;
-    const descodificado = descriptografar(dados)
-    input.textContent = descodificado
+btn2.addEventListener("click", () => {
     
+    input.textContent = armazenado;
+    console.log(armazenado);
 })
-function descriptografar(texto){
-    while (texto.includes("4")) {
-        texto = texto.replace("4", "a")
-    }
-    return texto
-}
+
+// function validarEntrada(dados) {
+//     alert("Fazer validação")
+// }
+
