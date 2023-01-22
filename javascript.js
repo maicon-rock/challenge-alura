@@ -22,11 +22,14 @@ function criptografar(texto) {
 }
 
 btn2.addEventListener("click",() =>{
-
+    const dados = area.value;
+    const descodificado = descriptografar(dados)
+    input.textContent = descodificado
+    
 })
-function descriptografar (texto){
-    while (texto.includes("4")){
-        
+function descriptografar(texto){
+    while (texto.includes("4")) {
+        texto = texto.replace("4", "a")
     }
+    return texto
 }
-
