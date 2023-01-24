@@ -48,8 +48,7 @@ function criptografar(texto) {
 }
 
 btn2.addEventListener("click", () => {
-    
-    input.textContent = armazenado;
+    area.textContent = armazenado;
     console.log(armazenado);
 })
 
