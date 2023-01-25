@@ -34,10 +34,10 @@ function validarEntrada(arrayDeCaracteres) {
         for (let caracter of listaDeAcentos) {
             if (letra === caracter) {
                 teste = true
-            }
+            }  console.log(letra);
         }
     }
-    return teste
+    return true
 }
 
 function criptografar(texto) {
@@ -64,7 +64,7 @@ function criptografar(texto) {
 
 btn2.addEventListener("click", () => {
     area.textContent = armazenado;
-    console.log(armazenado);
+   
 })
 
 
