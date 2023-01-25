@@ -28,7 +28,6 @@ function validarEntrada(arrayDeCaracteres) {
     let teste = false
 
     for (let letra of arrayDeCaracteres) {
-        console.log(letra);
         if (letra === letra.toUpperCase()) {
            return true
         }
