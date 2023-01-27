@@ -1,3 +1,4 @@
+
 const btn1 = document.querySelector(".botao1");
 const input = document.querySelector("#DigiteSeuTexto");
 const imgbox2 = document.querySelector(".imagemdecodificador");
@@ -8,6 +9,7 @@ let armazenado = "";
 btn1.addEventListener("click", () => {
     let dados = input.value;
     const resultado = validarEntrada(dados)
+
     if (resultado) {
         alert("Apenas letras minúsculas e sem acento")
         input.value = ""
@@ -23,21 +25,26 @@ function processar(texto) {
     input.value = ""
 }
 
-function validarEntrada(arrayDeCaracteres) {
+function validarEntrada(entradaDeTexto) {
     const listaDeAcentos = ["á", "é", "í", "ó", "ú", "ã", "õ", "à", "ê", "â", "ç", "ô"]
     let teste = false
-
-    for (let letra of arrayDeCaracteres) {
-        if (letra === letra.toUpperCase()) {
-           return true
-        }
-        for (let caracter of listaDeAcentos) {
-            if (letra === caracter) {
+    const listaDePalavras = entradaDeTexto.split(" ")
+    
+    for (const palavra of listaDePalavras) {
+        for (let letra of palavra) {
+            if (letra === letra.toUpperCase()) {
                 teste = true
-            }  console.log(letra);
+                break  
+            }
+
+            for (let caracter of listaDeAcentos) {
+                if (letra === caracter) {
+                    teste = true
+                }
+            }
         }
     }
-    return true
+    return teste
 }
 
 function criptografar(texto) {
@@ -64,7 +71,7 @@ function criptografar(texto) {
 
 btn2.addEventListener("click", () => {
     area.textContent = armazenado;
-   
+
 })
 
 
